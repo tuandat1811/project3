@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <!-- Include css files-->
   <link rel="stylesheet" href="/assets/styles.css" type="text/css">
@@ -22,34 +24,57 @@
     }
   </script> -->
   <!-- end function clear cache-->
-</head> 
+</head>
+
 <body>
   <!-- Nav bar -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="http://sinno.soict.ai"><img src="/assets/SINNO.png" alt="SINNO" width="50px" height="50px"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="http://sinno.soict.ai" target="_blank"><img src="/assets/SINNO.png" alt="SINNO"
+        width="50px" height="50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="https://hust.edu.vn"><img src="/assets/HUST.png" alt="HUST" width="50px" height="50px"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="https://hust.edu.vn" target="_blank"><img src="/assets/HUST.png" alt="HUST"
+        width="50px" height="50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#"> <img src="../assets/logo.png" alt="MicroS" width="160px" height="50px"> <span class="sr-only">(current)</span></a>
-        </li> 
+          <a class="nav-link" href=""> <img src="../assets/logo.png" alt="MicroS" width="160px" height="50px"> <span
+              class="sr-only">(current)</span></a>
+        </li>
       </ul>
     </div>
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
       <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link" href="#aboutus">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About MicroS</a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#aboutus">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About MicroS</a>
+        </li>
+        <li class="nav-item mega-dropdown">
+          <a class="nav-link" href="">User<i class='bx bxs-chevron-down'></i></a>
+          <div class="mega-content">
+            <div class="row">
+              <div class="box">
+                <ul>
+                  <li><a href="/login">Login</a></li>
+                </ul>
+              </div>
+              <div class="box">
+                <ul>
+                  <li><a href="/register">Register</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </nav>
@@ -60,16 +85,18 @@
       <p>Link ngắn, liên kết dài!</p>
 
     </div>
+
   </section>
-    <!-- Body part-->
+  <!-- Body part-->
   <section id="body">
     <div class="container">
       <form action="/shortUrls" method="POST" class="my-4 form-inline">
         <label for="fullUrl" class="sr-only"></label>
-        <input required placeholder="Your URL here" type="url" name="fullUrl" id="fullUrl" class="form-control form-control-lg col mr-2">
+        <input required placeholder="Your URL here" type="url" name="fullUrl" id="fullUrl"
+          class="form-control form-control-lg col mr-2">
         <button id="btn-shrink" class="btn btn-lg btn-success" type="submit">Micro It!</button>
       </form>
-      
+
       <table class="table table-striped" id="tableid">
         <thead>
           <tr>
@@ -82,12 +109,13 @@
         </thead>
         <tbody>
           <% shortUrls.forEach(shortUrl => { %>
-            <tr>
-              <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
-              <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td> <!-- set domain short in here-->
-              <td><%= shortUrl.clicks %></td>
-              <!-- <td><button class="btn"><i class="fas fa-copy"></i></button></td> -->
-            </tr>
+          <tr>
+            <td><a href="<%= shortUrl.full %>" target="_blank"><%= shortUrl.full %></a></td>
+            <td><a href="<%= shortUrl.short %>" target="_blank"><%= shortUrl.short %></a></td>
+            <!-- set domain short in here-->
+            <td><%= shortUrl.clicks %></td>
+            <!-- <td><button class="btn"><i class="fas fa-copy"></i></button></td> -->
+          </tr>
           <% }) %>
         </tbody>
       </table>
@@ -95,12 +123,14 @@
   </section>
   <section id="aboutus">
     <div class="row">
-      <div class="col-sm-6">  
+      <div class="col-sm-6">
         <img src="../assets/SINNO-main.jpg" alt="SINNO" class="sinno-main" width="320px" height="320px">
       </div>
       <div class="col-sm-6" id="text-about">
         <h3>About Us</h3>
-        <p>SoICT Innovation Club là Câu lạc bộ Sáng tạo sinh viên trực thuộc Viện Công nghệ Thông tin và Truyền thông, Trường Đại học Bách Khoa Hà Nội, được thành lập ngày 7/5/2020 với các giá trị cốt lõi nằm ở con người mang theo những đam mê và khát khao sáng tạo không giới hạn.</p>
+        <p>SoICT Innovation Club là Câu lạc bộ Sáng tạo sinh viên trực thuộc Viện Công nghệ Thông tin và Truyền thông,
+          Trường Đại học Bách Khoa Hà Nội, được thành lập ngày 7/5/2020 với các giá trị cốt lõi nằm ở con người mang
+          theo những đam mê và khát khao sáng tạo không giới hạn.</p>
       </div>
     </div>
   </section>
@@ -108,10 +138,11 @@
     <div class="row" id="row-about">
       <div class="col-sm-6" id="text-about">
         <h3>About MicroS</h3>
-        <p>MicroS là sản phẩm được tạo ra giúp chuyển đổi đường dẫn URL bất kì trở nên ngắn gọn, thẩm mỹ, chuyên nghiệp hơn chỉ sau một cú click chuột.        </p>
+        <p>MicroS là sản phẩm được tạo ra giúp chuyển đổi đường dẫn URL bất kì trở nên ngắn gọn, thẩm mỹ, chuyên nghiệp
+          hơn chỉ sau một cú click chuột. </p>
       </div>
       <div class="col-sm-1"></div>
-      <div class="col-sm-5">  
+      <div class="col-sm-5">
         <img src="../assets/logo.png" alt="MicroS" class="micros-main" width="320px" height="100px">
       </div>
     </div>
@@ -124,17 +155,15 @@
     <!-- Section: Social media start-->
     <section class="mb-4">
       <!-- Homepage -->
-      <a class="btn btn-outline-light btn-floating m-1" href="http://sinno.soict.ai" role="button">
+      <a class="btn btn-outline-light btn-floating m-1" href="http://sinno.soict.ai" role="button" target="_blank">
         <i class="fas fa-home"></i></a>
       <!-- Facebook -->
       <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/SINNOclub" role="button"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
+        target="_blank"><i class="fab fa-facebook-f"></i></a>
 
       <!-- Github -->
       <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/SOICTInnovationClub" role="button"
-        ><i class="fab fa-github"></i
-      ></a>
+        target="_blank"><i class="fab fa-github"></i></a>
     </section>
     <!-- Section: Social media end-->
 
@@ -143,17 +172,18 @@
       <p>
         Designed and made by SoICT Innovation Club, Hanoi University of Science and Technology.
         <br>
-        Author: Hoang Dang Tuan Dat
+        Author: <a href="https://www.facebook.com/shinya.Ft" target="_black">Hoang Dang Tuan Dat</a>
       </p>
     </section>
     <!-- Section: Text end-->
   </div>
   <!-- Copyright start-->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2021 Copyright: 
+    © 2021 Copyright:
     <a class="text-white" href="https://sinno.soict.ai">SoICT Innovation Club</a>
   </div>
   <!-- Copyright end-->
 </footer>
 <!-- Footer -->
+
 </html>
